@@ -2,6 +2,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 right_format = """$time"""
+continuation_prompt = '[▶▶ ](bold blue)'
 
 [character]
 success_symbol = '[ ➜](bold green)'
@@ -14,11 +15,27 @@ vimcmd_visual_symbol = '[ ❮](bold yellow)'
 [directory]
 truncation_length = 6
 truncation_symbol = '…/'
+truncate_to_repo = true
 home_symbol = '🏡'
+
+[git_commit]
+format = '[\(🌿 $hash$tag\)]($style) '
+tag_symbol = ' 🔖 '
+only_detached = false
+tag_disabled = false
+style = 'bold yellow'
 
 [git_state]
 rebase = '🌳 REBASING'
 cherry_pick = '🍒 CHERRY-PICKING'
+
+[git_metrics]
+disabled = false
+
+[git_status]
+ahead = '⇡${count}'
+diverged = '⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
 
 [time]
 disabled = false
@@ -35,3 +52,7 @@ disabled = true
 
 [nodejs]
 disabled = true
+
+[[battery.display]]
+threshold = 20
+style = 'bold red'
