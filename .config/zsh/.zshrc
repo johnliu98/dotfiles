@@ -59,16 +59,6 @@ zsh_add_completion "zsh-users/zsh-completions" true
 # For more plugins: https://github.com/unixorn/awesome-zsh-plugins
 # More completions https://github.com/zsh-users/zsh-completions
 
-# FZF 
-# [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-# [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-# [ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
-# [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# [ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
-# export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
-# export FZF_DEFAULT_COMMAND="find . -type f"
-
 # Unbind keys
 bindkey -r "^u"
 bindkey -r "^d"
