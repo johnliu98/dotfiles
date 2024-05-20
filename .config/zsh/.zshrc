@@ -118,4 +118,4 @@ zle-line-init() {
 zle -N zle-line-init
 
 # Load system information
-pfetch
+fastfetch
