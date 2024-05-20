@@ -21,7 +21,7 @@ home_symbol = '🏡'
 [git_commit]
 format = '[\(🌿 $hash$tag\)]($style) '
 tag_symbol = ' 🔖 '
-only_detached = false
+only_detached = true
 tag_disabled = false
 style = 'bold yellow'
 
