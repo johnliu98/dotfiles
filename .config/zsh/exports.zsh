@@ -32,12 +32,13 @@ export GOBIN="$HOME/go/bin"
 export GOPRIVATE="github.com/einride/*,go.einride.tech/*,github.com/einride-autonomous/*"
 
 # Export to PATH
-export PATH="$PATH:$XDG_DATA_HOME/cargo/bin"
-export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
-export PATH="$PATH:$GOROOT/bin"
+export PATH="$PATH:${XDG_DATA_HOME}/cargo/bin"
+export PATH="$PATH:${HOME}/.local/bin"
+export PATH="$PATH:${GOROOT}/bin"
 export PATH="$PATH:$GOBIN"
-export PATH="$PATH:/home/john/.local/share/fnm"
-export PATH="$PATH:/home/john/go/src/github.com/balena-io/balena-cli"
+export PATH="$PATH:${XDG_DATA_HOME}/fnm"
+export PATH="$PATH:${GOPATH}/src/github.com/balena-io/balena-cli"
+export PATH="$PATH:${XDG_DATA_HOME}/npm/bin"
 
 # Ansible
 export ANSIBLE_HOME="$XDG_CONFIG_HOME/ansible"
