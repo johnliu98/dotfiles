@@ -59,6 +59,18 @@ return { -- Fuzzy Finder (files, lsp, etc)
           require('telescope.themes').get_dropdown(),
         },
       },
+      defaults = {
+        vimgrep_arguments = {
+          'rg',
+          '-L',
+          '--no-heading',
+          '--with-filename',
+          '--line-number',
+          '--column',
+          '--smart-case',
+          '--hidden',
+        },
+      },
     }
 
     -- Enable Telescope extensions if they are installed
