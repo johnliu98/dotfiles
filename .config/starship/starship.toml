@@ -1,0 +1,37 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+right_format = """$time"""
+
+[character]
+success_symbol = '[ ➜](bold green)'
+error_symbol = '[ ✖](bold red)'
+vimcmd_symbol = '[ ❮](bold green)'
+vimcmd_replace_one_symbol = '[ ❮](bold purple)'
+vimcmd_replace_symbol = '[ ❮](bold purple)'
+vimcmd_visual_symbol = '[ ❮](bold yellow)'
+
+[directory]
+truncation_length = 6
+truncation_symbol = '…/'
+home_symbol = '🏡'
+
+[git_state]
+rebase = '🌳 REBASING'
+cherry_pick = '🍒 CHERRY-PICKING'
+
+[time]
+disabled = false
+style = 'fg:#576A8A'
+format = '[$time]($style) '
+time_format = '[ %H:%M:%S ]'
+utc_time_offset = 'local'
+
+[cmd_duration]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[nodejs]
+disabled = true
