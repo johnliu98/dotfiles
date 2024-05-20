@@ -52,9 +52,6 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 
-# Github
-# export GITHUB_TOKEN=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
-
 # GnuPG
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 
