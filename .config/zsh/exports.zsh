@@ -114,8 +114,5 @@ eval "$(starship init zsh)"
 # Fuzzy finder
 eval "$(fzf --zsh)"
 
-# Mise version manager
-eval "$(/home/john/.local/bin/mise activate zsh)"
-
 # Add path to alcritty completions.
 fpath+=${ZDOTDIR:-~}
