@@ -15,9 +15,22 @@ sudo apt install git
 
 ### Stow
 
+1. Download stow.
+
 ```sh
-curl https://ftp.gnu.org/gnu/stow/stow-latest.tar.gz --output stow.tar.gz
-tar -xvpzf stow.tar.gz
+curl -sO https://ftp.gnu.org/gnu/stow/stow-latest.tar.gz
+tar -xf stow-latest.tar.gz
+```
+
+2. Install Perl dependencies.
+
+```sh
+sudo cpan Test::Output
+sudo cpan Test::More
+```
+
+3. Install Stow.
+```
 cd stow-<version>
 ./configure && sudo make install
 ```
@@ -34,5 +47,5 @@ cd ~/dotfiles
 then use GNU stow to create symlinks
 
 ```sh
-stow --adopt .
+stow .
 ```
