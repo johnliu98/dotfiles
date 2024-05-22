@@ -30,7 +30,8 @@ sudo cpan Test::More
 ```
 
 3. Install Stow.
-```
+
+```sh
 cd stow-<version>
 ./configure && sudo make install
 ```
@@ -41,11 +42,12 @@ First, clone the dotfiles repository in $HOME directory
 
 ```sh
 git clone git@github.com:johnliu98/dotfiles.git "${HOME}/dotfiles"
-cd ~/dotfiles
 ```
 
 then use GNU stow to create symlinks
 
 ```sh
+cd ~/dotfiles
+ls .config | xargs -I % mkdir -p ~/.config/%
 stow .
 ```
