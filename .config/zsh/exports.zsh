@@ -57,6 +57,11 @@ export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 
 # Google cloud
 export CLOUDSDK_PYTHON="/usr/bin/python3"
+# The next line updates PATH for the Google Cloud SDK.
+[ -f "${XDG_DATA_HOME}/google-cloud-sdk/path.zsh.inc" ] && . "${XDG_DATA_HOME}/google-cloud-sdk/path.zsh.inc"
+# The next line enables shell command completion for gcloud.
+[ -f "${XDG_DATA_HOME}/google-cloud-sdk/completion.zsh.inc" ] && . "${XDG_DATA_HOME}/google-cloud-sdk/completion.zsh.inc"
+
 
 # Ivex
 export IVEX_USER=john
