@@ -47,6 +47,7 @@ export ANSIBLE_GALAXY_CACHE_DIR="$XDG_CACHE_HOME/ansible/galaxy_cache"
 
 # Cargo
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
+[ -f "${XDG_DATA_HOME}/cargo/env" ] && . "${XDG_DATA_HOME}/cargo/env"
 
 # Docker
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
