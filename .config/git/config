@@ -1,0 +1,25 @@
+[user]
+  name = John Liu
+  email = john-liu-einride@users.noreply.github.com
+[core]
+  editor = nvim
+  pager = delta
+  log = delta
+  reflog = delta
+  show = delta
+  autocrlf = input
+[interactive]
+  diffFilter = delta --color-only
+[url "git@github.com:einride/"]
+  insteadOf = https://github.com/einride/
+[url "git@github.com:einride-autonomous/"]
+  insteadOf = https://github.com/einride-autonomous/
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[rerere]
+	enabled = true
+[maintenance]
+  auto = false
+  strategy = incremental
