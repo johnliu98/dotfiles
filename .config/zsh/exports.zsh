@@ -85,6 +85,12 @@ export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/python"
 export PYTHONUSERBASE="$XDG_DATA_HOME/python"
 export PYTHON_HISTORY="$XDG_STATE_HOME/python/history"
 
+# Python environment
+export PYENV_ROOT="${XDG_DATA_HOME}/pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # Rust
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 
