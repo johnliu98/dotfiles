@@ -3,8 +3,8 @@
 # --- General Aliases ----
 
 # movement
-alias ge="cd ~/go/src/github.com/einride-autonomous/ads/"
-alias gea="cd ~/go/src/github.com/einride-autonomous/ads/services/ad/"
+alias ge="cd ~/go/src/github.com/einride"
+alias gea="cd ~/go/src/github.com/einride-autonomous/ads/services/ad"
 alias ges="cd ~/go/src/github.com/einride/simian-adapter"
 
 # listing
