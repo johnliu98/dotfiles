@@ -1,6 +1,10 @@
 return { -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
+  dependencies = {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    'nvim-treesitter/playground',
+  },
   opts = {
     ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
     -- Autoinstall languages that are not installed
@@ -13,6 +17,18 @@ return { -- Highlight, edit, and navigate code
       additional_vim_regex_highlighting = { 'ruby' },
     },
     indent = { enable = true, disable = { 'ruby' } },
+    textobjects = {
+      move = {
+        enable = true,
+        set_jumps = true,
+        goto_next_start = {
+          [']f'] = { query = '@function.name', desc = 'Next function' },
+        },
+        goto_previous_start = {
+          ['[f'] = { query = '@function.name', desc = 'Prevous function' },
+        },
+      },
+    },
   },
   config = function(_, opts)
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
