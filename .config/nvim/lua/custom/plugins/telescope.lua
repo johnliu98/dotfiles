@@ -56,7 +56,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       pickers = {
         lsp_references = {
           include_declaration = false,
-          include_current_line = false,
+          include_current_line = true,
         },
       },
 
