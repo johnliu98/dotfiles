@@ -1,6 +1,7 @@
 return {
   {
     'lewis6991/gitsigns.nvim',
+    dependencies = { 'ghostbuster91/nvim-next' },
     opts = {
       signs = {
         add = { text = '+' },
@@ -11,6 +12,7 @@ return {
       },
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
+        local next_gitsigns = require('nvim-next.integrations').gitsigns(gitsigns)
 
         local function map(mode, l, r, opts)
           opts = opts or {}
@@ -23,7 +25,7 @@ return {
           if vim.wo.diff then
             vim.cmd.normal { ']h', bang = true }
           else
-            gitsigns.nav_hunk 'next'
+            next_gitsigns.next_hunk()
           end
         end, { desc = 'Next Git [H]unk' })
 
@@ -31,7 +33,7 @@ return {
           if vim.wo.diff then
             vim.cmd.normal { '[h', bang = true }
           else
-            gitsigns.nav_hunk 'prev'
+            next_gitsigns.prev_hunk()
           end
         end, { desc = 'Previous Git [H]unk' })
 
