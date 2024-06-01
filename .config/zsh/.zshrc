@@ -1,6 +1,5 @@
-#!/bin/sh
+# zmodload zsh/zprof
 
-# some useful options (man zshoptions)
 setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_space
@@ -19,73 +18,35 @@ unsetopt BEEP
 # Normal files to source
 [ -f "${ZDOTDIR}/exports.zsh" ] && source "${ZDOTDIR}/exports.zsh"
 [ -f "${ZDOTDIR}/aliases.zsh" ] && source "${ZDOTDIR}/aliases.zsh"
+[ -f "${ZDOTDIR}/vi.zsh" ] && source "${ZDOTDIR}/vi.zsh"
 
-# completions
-autoload -Uz compinit -d ${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/zcompdump-$ZSH_VERSION
+# Source zinit
+if [ ! -f "${ZINIT_HOME}/zinit.zsh" ]; then
+        mkdir -p "$(dirname $ZINIT_HOME)"
+        git clone https://github.com/zdharma-continuum/zinit "$ZINIT_HOME"
+fi
+source "${ZINIT_HOME}/zinit.zsh"
+
+# Plugins
+zinit wait lucid for \
+   hlissner/zsh-autopair \
+   Aloxaf/fzf-tab \
+   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+      zdharma-continuum/fast-syntax-highlighting \
+   blockf \
+      zsh-users/zsh-completions \
+   atload"!_zsh_autosuggest_start" \
+      zsh-users/zsh-autosuggestions
+
+# Completions
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:z:*' fzf-preview 'ls -hN --color --group-directories-first $realpath'
-
-# Completion files: Use XDG dirs
-[ -d "${XDG_CACHE_HOME:-${HOME}/.cache}"/zsh ] || mkdir -p "${XDG_CACHE_HOME:-${HOME}/.cache}"/zsh
-zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-${HOME}/.cache}"/zsh/zcompcache
-compinit -d "${XDG_CACHE_HOME:-${HOME}/.cache}"/zsh/zcompdump-$ZSH_VERSION
-
-# zstyle ':completion::complete:lsof:*' menu yes select
-zmodload zsh/complist
-# compinit
-_comp_options+=(globdots)		# Include hidden files.
-
-[ -f "${ZDOTDIR}/vi.zsh" ] && source "${ZDOTDIR}/vi.zsh"
-
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-
-# Colors
-autoload -Uz colors && colors
-
-# Useful Functions
-source "$ZDOTDIR/functions.zsh"
-
-# Plugins
-zsh_add_plugin "zsh-users/zsh-autosuggestions"
-zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
-zsh_add_plugin "hlissner/zsh-autopair"
-zsh_add_plugin "Aloxaf/fzf-tab"
-zsh_add_completion "zsh-users/zsh-completions" true
-# For more plugins: https://github.com/unixorn/awesome-zsh-plugins
-# More completions https://github.com/zsh-users/zsh-completions
-
-# Unbind keys
-bindkey -r "^u"
-bindkey -r "^d"
-bindkey -r "^[,"
-bindkey -r "^[/"
-bindkey -r "^[OA"
-bindkey -r "^[OB"
-bindkey -r "^[OC"
-bindkey -r "^[OD"
-bindkey -r "^[[A"
-bindkey -r "^[[B"
-bindkey -r "^[[C"
-bindkey -r "^[[D"
-bindkey -r "^[[P"
-bindkey -r "^[c"
-bindkey -r "^[~"
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls -hN --color --group-directories-first $realpath'
 
 # Key-bindings
 bindkey -s '^f' 'zi^M'
-bindkey -s '^s' 'ncdu^M'
 bindkey -s '^v' 'fzf | xargs -r nvim^M'
-bindkey "^p" up-line-or-beginning-search # Up
-bindkey "^n" down-line-or-beginning-search # Down
-bindkey "^k" up-line-or-beginning-search # Up
-bindkey "^j" down-line-or-beginning-search # Down
-bindkey "^h" fzf-history-widget
-bindkey '^[[P' delete-char
 
 # Transient prompt
 zle-line-init() {
@@ -119,3 +80,5 @@ zle -N zle-line-init
 
 # Load system information
 fastfetch
+
+# zprof

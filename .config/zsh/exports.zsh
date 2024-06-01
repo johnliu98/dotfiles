@@ -111,6 +111,9 @@ export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 # WGET
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
+# Zinit
+ZINIT_HOME="${XDG_DATA_HOME}/zinit/zinit.git"
+
 # Export gpg tty
 export GPG_TTY=$(tty)
 
