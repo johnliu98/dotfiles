@@ -63,7 +63,10 @@ zle-line-init() {
 
         local saved_prompt=$PROMPT
         local saved_rprompt=$RPROMPT
-        PROMPT='%{%} ➜%{%} %'
+
+        STATUS="➜"
+        [ "$STARSHIP_CMD_STATUS" -eq "1" ] && STATUS="✖"
+        PROMPT='%{%} $STATUS%{%} %'
         RPROMPT=''
         zle .reset-prompt
         PROMPT=$saved_prompt
