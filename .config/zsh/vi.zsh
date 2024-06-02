@@ -1,5 +1,5 @@
 bindkey -v
-export KEYTIMEOUT=30
+export KEYTIMEOUT=5
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {
@@ -9,10 +9,12 @@ function zle-keymap-select () {
     esac
 }
 zle -N zle-keymap-select
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
+
+ # Use beam shape cursor on startup.
+echo -ne '\e[5 q'
+
+# Use beam shape cursor when exiting neovim.
+function _fix_cursor() {
+    echo -ne '\e[5 q'
 }
-zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+precmd_functions+=(_fix_cursor)
