@@ -29,7 +29,7 @@ return {
 
     -- Equalize window size on toggle
     vim.keymap.set('n', '<leader>e', function()
-      vim.cmd 'Neotree toggle'
+      vim.cmd 'Neotree toggle reveal'
       vim.cmd 'wincmd ='
     end, { desc = 'Toggle File [E]xplorer' })
   end,
