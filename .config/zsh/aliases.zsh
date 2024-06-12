@@ -6,6 +6,7 @@
 alias ge="cd ~/go/src/github.com/einride"
 alias gea="cd ~/go/src/github.com/einride-autonomous/ads/services/ad"
 alias ges="cd ~/go/src/github.com/einride/simian-adapter"
+alias ads="cd ~/go/src/github.com/einride-autonomous/ads"
 
 # listing
 alias ls='ls -hN --color=auto --group-directories-first'
