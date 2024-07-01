@@ -47,6 +47,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls -hN --color --group-dire
 # Key-bindings
 bindkey -s '^f' 'zi^M'
 bindkey -s '^v' 'fzf | xargs -r nvim^M'
+bindkey '^O' clear-screen
 
 # Transient prompt
 zle-line-init() {
