@@ -59,3 +59,12 @@ alias db="gh dependabot -t einride/team-motion-control"
 
 # wireguard
 alias wg="sudo wg-quick up client_00044"
+
+# jama
+function jama-id() {
+    cat ${XDG_CACHE_HOME}/jama/id
+}
+
+function jama-secret() {
+    cat ${XDG_CACHE_HOME}/jama/secret
+}
