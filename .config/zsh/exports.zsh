@@ -117,17 +117,5 @@ ZINIT_HOME="${XDG_DATA_HOME}/zinit/zinit.git"
 # Export gpg tty
 export GPG_TTY=$(tty)
 
-# Better node manager
-eval "$(fnm env)"
-
-# Visited directory heuristic
-eval "$(zoxide init zsh)"
-
-# Set starship prompt
-eval "$(starship init zsh)"
-
-# Fuzzy finder
-eval "$(fzf --zsh)"
-
 # Add path to alcritty completions.
 fpath+=${ZDOTDIR:-~}

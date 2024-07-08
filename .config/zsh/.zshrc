@@ -82,6 +82,18 @@ zle-line-init() {
 }
 zle -N zle-line-init
 
+# Better node manager
+eval "$(fnm env)"
+
+# Visited directory heuristic
+eval "$(zoxide init zsh)"
+
+# Set starship prompt
+eval "$(starship init zsh)"
+
+# Fuzzy finder
+eval "$(fzf --zsh)"
+
 # Load system information
 fastfetch
 
