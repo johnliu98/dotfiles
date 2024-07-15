@@ -86,6 +86,7 @@ zle -N zle-line-init
 eval "$(fnm env)"
 
 # Visited directory heuristic
+unalias zi
 eval "$(zoxide init zsh)"
 
 # Set starship prompt
