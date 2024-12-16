@@ -22,5 +22,8 @@ vim.keymap.set('n', ']d', require('nvim-next.integrations').diagnostic().goto_ne
 vim.keymap.set('n', '[d', require('nvim-next.integrations').diagnostic().goto_prev(), { desc = 'Previous [D]iagnostic' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+vim.keymap.set('v', '>', '>gv', { silent = true })
+vim.keymap.set('v', '<', '<gv', { silent = true })
+
 -- Quit
 vim.keymap.set('n', 'Q', ':qa!<CR>', { desc = '[Q]uit' })
