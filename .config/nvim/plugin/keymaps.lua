@@ -10,6 +10,9 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- Toggle relative numbers
+vim.keymap.set('n', '<leader>n', '<cmd>set relativenumber!<CR>')
+
 -- Don't copy the replaced text after pasting in visual mode
 vim.keymap.set('x', 'p', 'p:let @+=@0<CR>:let @"=@0<CR>', { desc = "Don't copy replaced text", silent = true })
 
