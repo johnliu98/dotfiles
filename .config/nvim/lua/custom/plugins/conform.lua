@@ -28,7 +28,7 @@ return { -- Autoformat
     }
 
     require('conform').formatters.golines = {
-      prepend_args = { '-m', '120', '--shorten-comments', '--reformat-tags' },
+      prepend_args = { '-m', '120', '-t', '1', '--shorten-comments', '--reformat-tags' },
     }
   end,
 }
