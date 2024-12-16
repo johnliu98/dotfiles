@@ -65,3 +65,7 @@ opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 opt.scrolloff = 10
+
+-- US English spelling
+opt.spelllang = 'en_us'
+opt.spell = true
