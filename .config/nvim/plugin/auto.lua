@@ -35,3 +35,14 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     vim.lsp.buf.format { async = false }
   end,
 })
+
+-- Disable numbers of terminal
+-- Enter terminal in insert mode
+vim.api.nvim_create_autocmd('TermOpen', {
+  group = vim.api.nvim_create_augroup('term-open', { clear = true }),
+  callback = function()
+    vim.opt.number = false
+    vim.opt.relativenumber = false
+    vim.cmd ':startinsert'
+  end,
+})
