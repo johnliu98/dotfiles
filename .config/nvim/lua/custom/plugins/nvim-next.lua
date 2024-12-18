@@ -1,4 +1,4 @@
-return { -- Repeat movments
+return {
   'ghostbuster91/nvim-next',
   config = function()
     local next = require 'nvim-next'

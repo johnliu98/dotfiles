@@ -1,4 +1,4 @@
-return { -- Highlight, edit, and navigate code
+return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
   dependencies = {
@@ -13,7 +13,6 @@ return { -- Highlight, edit, and navigate code
     require('nvim-next.integrations').treesitter_textobjects()
     require('nvim-treesitter.configs').setup {
       ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
-      -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
         enable = true,
