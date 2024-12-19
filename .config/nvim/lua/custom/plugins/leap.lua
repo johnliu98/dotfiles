@@ -1,5 +1,6 @@
 return {
   'ggandor/leap.nvim',
+  enabled = false,
   keys = { 's', 'S' },
   dependencies = 'tpope/vim-repeat',
   init = function()
