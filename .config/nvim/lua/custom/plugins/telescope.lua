@@ -17,9 +17,16 @@ return { -- Fuzzy Finder (files, lsp, etc)
   config = function()
     require('telescope').setup {
       pickers = {
+        lsp_definitions = {
+          show_line = false,
+        },
         lsp_references = {
           include_declaration = false,
           include_current_line = true,
+          show_line = false,
+        },
+        lsp_implementations = {
+          show_line = false,
         },
       },
 
