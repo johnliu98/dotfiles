@@ -69,3 +69,9 @@ function jama-id() {
 function jama-secret() {
     cat ${XDG_CACHE_HOME}/jama/secret
 }
+
+function github-token() {
+    cat ${XDG_CACHE_HOME}/github/token
+}
+
+export GITHUB_TOKEN=$(github-token)
