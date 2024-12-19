@@ -10,7 +10,7 @@ vim.keymap.set('t', '<C-k>', '<C-\\><C-N><C-w>k', { desc = 'Move up' })
 vim.keymap.set('t', '<C-l>', '<C-\\><C-N><C-w>l', { desc = 'Move right' })
 
 -- Toggle relative numbers
-vim.keymap.set('n', '<leader>n', '<cmd>set relativenumber!<CR>')
+vim.keymap.set('n', '<leader>n', '<cmd>set relativenumber!<CR>', { desc = 'Toggle relative numbers' })
 
 -- Don't copy the replaced text after pasting in visual mode
 vim.keymap.set('x', 'p', 'p:let @+=@0<CR>:let @"=@0<CR>', { desc = "Don't copy replaced text", silent = true })
