@@ -28,7 +28,7 @@ export LS_COLORS="rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;
 export EDITOR="nvim"
 export BROWSER="google-chrome-stable"
 
-# Set Go varaibles
+# Set Go variables
 export GOROOT="/usr/local/go"
 export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
@@ -42,6 +42,7 @@ export PATH="$PATH:$GOBIN"
 export PATH="$PATH:${XDG_DATA_HOME}/fnm"
 export PATH="$PATH:${GOPATH}/src/github.com/balena-io/balena-cli"
 export PATH="$PATH:${XDG_DATA_HOME}/npm/bin"
+export PATH="$PATH:${XDG_DATA_HOME}/python/bin"
 
 # Ansible
 export ANSIBLE_HOME="$XDG_CONFIG_HOME/ansible"
