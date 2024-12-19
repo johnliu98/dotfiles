@@ -9,6 +9,10 @@ vim.keymap.set('t', '<C-j>', '<C-\\><C-N><C-w>j', { desc = 'Move down' })
 vim.keymap.set('t', '<C-k>', '<C-\\><C-N><C-w>k', { desc = 'Move up' })
 vim.keymap.set('t', '<C-l>', '<C-\\><C-N><C-w>l', { desc = 'Move right' })
 
+-- Resize windows
+vim.keymap.set('n', '>', '<C-w>>', { desc = 'Increase window size' })
+vim.keymap.set('n', '<', '<C-w><', { desc = 'Decrease window size' })
+
 -- Toggle relative numbers
 vim.keymap.set('n', '<leader>n', '<cmd>set relativenumber!<CR>', { desc = 'Toggle relative numbers' })
 
