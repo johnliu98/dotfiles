@@ -2,7 +2,12 @@
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-vim.keymap.set('t', '<Esc><Esc>', '<cmd><CR><C-\\><C-n>nohlsearch', { desc = 'Exit terminal mode' })
+-- Terminal mode
+vim.keymap.set('t', '<ESC>', '<C-\\><C-N><cmd>nohlsearch<CR>', { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<C-h>', '<C-\\><C-N><C-w>h', { desc = 'Move left' })
+vim.keymap.set('t', '<C-j>', '<C-\\><C-N><C-w>j', { desc = 'Move down' })
+vim.keymap.set('t', '<C-k>', '<C-\\><C-N><C-w>k', { desc = 'Move up' })
+vim.keymap.set('t', '<C-l>', '<C-\\><C-N><C-w>l', { desc = 'Move right' })
 
 -- Toggle relative numbers
 vim.keymap.set('n', '<leader>n', '<cmd>set relativenumber!<CR>')

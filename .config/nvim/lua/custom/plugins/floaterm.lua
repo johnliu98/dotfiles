@@ -1,13 +1,14 @@
 return {
   'voldikss/vim-floaterm',
-  keys = { '<leader>f' },
+  keys = { '<C-t>' },
   cmd = { 'FloatermToggle' },
   config = function()
     local g = vim.g
-    g.floaterm_width = 0.95
-    g.floaterm_height = 0.6
-    g.floaterm_position = 'bottom'
+    g.floaterm_width = 0.5
+    g.floaterm_height = 0.99
+    g.floaterm_position = 'right'
 
-    vim.keymap.set({ 'n', 'v', 'x' }, '<leader>f', '<cmd>FloatermToggle<CR>', { desc = '[F]loating Terminal' })
+    vim.keymap.set({ 'n', 'v', 'x' }, '<C-t>', '<cmd>FloatermToggle<CR>', { desc = 'Floating [T]erminal' })
+    vim.keymap.set('t', '<C-t>', '<C-\\><C-N><cmd>FloatermToggle<CR>', { desc = 'Floating [T]erminal' })
   end,
 }
