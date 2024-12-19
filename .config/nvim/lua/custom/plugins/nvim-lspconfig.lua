@@ -7,12 +7,14 @@ return { -- LSP Configuration & Plugins
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
     -- Useful status updates for LSP.
-    -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    { 'j-hui/fidget.nvim', opts = {} },
+    { 'j-hui/fidget.nvim' },
 
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
-    { 'folke/neodev.nvim', opts = {} },
+    { 'folke/neodev.nvim' },
+
+    -- Completions
+    'saghen/blink.cmp',
   },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
@@ -57,14 +59,14 @@ return { -- LSP Configuration & Plugins
 
         if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
           map('<leader>th', function()
-            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled {})
           end, '[T]oggle Inlay [H]ints')
         end
       end,
     })
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+    capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
 
     local servers = {
       clangd = {},
@@ -88,9 +90,7 @@ return { -- LSP Configuration & Plugins
     require('mason').setup()
 
     local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, {
-      'stylua',
-    })
+    vim.list_extend(ensure_installed, { 'stylua' })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
     require('mason-lspconfig').setup {
