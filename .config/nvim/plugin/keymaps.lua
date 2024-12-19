@@ -22,10 +22,15 @@ vim.keymap.set({ 'v', 'x' }, 'K', ":m '<-2<CR>gv=gv", { desc = 'Move block down'
 -- Diagnostic keymaps
 vim.keymap.set('n', ']d', require('nvim-next.integrations').diagnostic().goto_next(), { desc = 'Next [D]iagnostic' })
 vim.keymap.set('n', '[d', require('nvim-next.integrations').diagnostic().goto_prev(), { desc = 'Previous [D]iagnostic' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setqflist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Indent line
 vim.keymap.set('v', '>', '>gv', { silent = true })
 vim.keymap.set('v', '<', '<gv', { silent = true })
 
+-- Quickfix list
+vim.keymap.set('n', '<M-j>', '<cmd>cnext<CR>', { desc = 'Move next quickfix list' })
+vim.keymap.set('n', '<M-k>', '<cmd>cprev<CR>', { desc = 'Move previous quickfix list' })
+
 -- Quit
-vim.keymap.set('n', 'Q', ':qa!<CR>', { desc = '[Q]uit' })
+vim.keymap.set('n', 'Q', ':qa!<CR>', { desc = '[Q]uit force' })
