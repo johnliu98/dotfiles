@@ -83,6 +83,7 @@ return { -- LSP Configuration & Plugins
           Lua = {
             diagnostics = {
               globals = { 'vim' },
+              disable = { 'missing-fields' },
             },
             completion = {
               callSnippet = 'Replace',
