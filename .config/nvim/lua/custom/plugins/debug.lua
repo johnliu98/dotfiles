@@ -78,6 +78,6 @@ return {
     vim.keymap.set('n', '<leader>dl', dap_go.debug_last_test, { desc = '[D]ebug [L]ast Test' })
     dap_go.setup()
 
-    require('nvim-dap-virtual-text').setup()
+    require('nvim-dap-virtual-text').setup {}
   end,
 }
