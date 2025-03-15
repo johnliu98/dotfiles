@@ -1,16 +1,7 @@
 return {
   'stevearc/conform.nvim',
-  lazy = false,
-  keys = {
-    {
-      '<leader>f',
-      function()
-        require('conform').format { async = true, lsp_fallback = true }
-      end,
-      mode = '',
-      desc = '[F]ormat buffer',
-    },
-  },
+  event = { 'BufWritePre' },
+  cmd = { 'ConformInfo' },
   config = function()
     require('conform').setup {
       notify_on_error = false,
@@ -23,7 +14,7 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        go = { 'golines', 'goimports', 'gofumpt' },
+        go = { 'goimports', 'gofumpt', 'golines' },
       },
     }
 
