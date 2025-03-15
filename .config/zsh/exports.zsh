@@ -7,8 +7,9 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
 export XDG_RUNTIME_DIR="/run/user/$UID"
-export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export XDG_CONFIG_DIRS="/etc/xdg"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
 
 # History
 HISTFILE="${XDG_STATE_HOME}/zsh/history" 
@@ -106,8 +107,8 @@ export STARSHIP_CACHE="$XDG_CACHE_HOME/starhip"
 # Visual Studio Code
 export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
 
-# Wine
-export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
+# VPN
+export VPN_CONFIG="$XDG_DATA_HOME/john.liu.conf"
 
 # WGET
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"

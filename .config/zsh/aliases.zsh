@@ -9,6 +9,7 @@ alias gea="cd ~/go/src/github.com/einride-autonomous/ads/services/ad"
 alias ges="cd ~/go/src/github.com/einride-autonomous/simian-adapter"
 alias ads="cd ~/go/src/github.com/einride-autonomous/ads"
 alias gep="cd ~/go/src/github.com/einride-autonomous/ads/services/pod-fusion-service"
+alias gev="cd ~/go/src/github.com/einride-autonomous/vehicle-control"
 
 # listing
 alias ls='ls -hN --color=auto --group-directories-first'
@@ -32,6 +33,9 @@ alias free='free -h'
 # neovim
 alias v="nvim"
 
+# vpn
+alias vpn="sudo openvpn --config $VPN_CONFIG"
+
 # python
 alias p="python"
 
@@ -47,6 +51,7 @@ alias gc="git checkout"
 alias gcm="git checkout master"
 alias gs="git status"
 alias gl="git log --stat"
+alias glo="git log --oneline"
 alias glog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias gd="git diff"
 alias gdc="git diff --cached"
@@ -54,6 +59,17 @@ alias gb="git branch"
 alias gr="git reset"
 alias gM="git merge"
 alias gR="git rebase"
+alias gS="git stash"
+alias gSp="git stash pop"
+
+function gbc() {
+    git fetch -p
+    branches=$(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" { sub("refs/heads/", "", $1); print $1}')
+    for branch in $branches; do
+    git branch -D $branch;
+done
+}
+
 
 # dependabot PRs
 alias db="gh dependabot -t einride/team-motion-control"
