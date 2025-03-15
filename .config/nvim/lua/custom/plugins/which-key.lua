@@ -5,13 +5,10 @@ return {
     require('which-key').setup()
 
     require('which-key').add {
-      { '<leader>c', desc = '[C]ode' },
-      { '<leader>d', desc = '[D]ocument' },
-      { '<leader>r', desc = '[R]ename' },
+      { '<leader>d', desc = '[D]ebug' },
       { '<leader>s', desc = '[S]earch' },
-      { '<leader>w', desc = '[W]orkspace' },
-      { '<leader>t', desc = '[T]oggle' },
       { '<leader>h', desc = 'Git [H]unk' },
+      { 'm', desc = '[M]ark' },
     }
 
     require('which-key').add {
