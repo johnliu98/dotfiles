@@ -64,8 +64,18 @@ opt.inccommand = 'split'
 opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-opt.scrolloff = 10
+opt.scrolloff = 8
 
 -- US English spelling
 opt.spelllang = 'en_us'
 opt.spell = true
+
+-- Rounded borders.
+local _border = 'rounded'
+
+vim.diagnostic.config {
+  float = { border = _border },
+}
+
+-- Use true colors
+vim.o.termguicolors = true
