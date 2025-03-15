@@ -9,9 +9,9 @@ return { -- LSP Configuration & Plugins
     -- Useful status updates for LSP.
     { 'j-hui/fidget.nvim' },
 
-    -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
+    -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
-    { 'folke/neodev.nvim' },
+    { 'folke/lazydev.nvim' },
 
     -- Completions
     'saghen/blink.cmp',
