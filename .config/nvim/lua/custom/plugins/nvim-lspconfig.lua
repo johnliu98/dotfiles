@@ -69,7 +69,9 @@ return { -- LSP Configuration & Plugins
     capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
 
     local servers = {
-      clangd = {},
+      clangd = {
+        cmd = { 'clangd', '--header-insertion=never' },
+      },
       gopls = {},
       pyright = {},
       rust_analyzer = {},
