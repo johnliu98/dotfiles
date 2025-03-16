@@ -62,6 +62,10 @@ return {
           filter = { event = 'msg_showmode' },
           view = 'recording',
         },
+        {
+          filter = { event = 'notify', kind = 'warn' },
+          opts = { skip = true },
+        },
       },
       lsp = {
         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
