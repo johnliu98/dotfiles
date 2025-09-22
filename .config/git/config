@@ -8,8 +8,12 @@
   reflog = delta
   show = delta
   autocrlf = input
+  compression = 9
+  whitespace = error
+  preloadindex = true
 [interactive]
   diffFilter = delta --color-only
+  singleKey = true
 [url "git@github.com:einride/"]
   insteadOf = https://github.com/einride/
 [url "git@github.com:einride-autonomous/"]
@@ -18,8 +22,30 @@
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = !/usr/bin/gh auth git-credential
-[rerere]
-	enabled = true
 [maintenance]
   auto = true
   strategy = incremental
+[advice]
+  addEmptyPathspec = false
+  pushNonFastForward = false
+  statusHints = false
+[status]
+  showStash = true
+  showUntrackedFiles = all
+[diff]
+  context = 3
+  renames = copies
+  interHunkContext = 10
+[push]
+  autoSetupRemote = true
+[pull]
+  rebase = true
+[rebase]
+  autoStash = true
+  missingCommitCheck = warn
+[log]
+  abbrevCommit = true
+[branch]
+  sort = -committerdate
+[tag]
+  sort = -taggerdate
