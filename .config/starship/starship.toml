@@ -18,12 +18,17 @@ truncation_symbol = '…/'
 truncate_to_repo = true
 home_symbol = '🏡'
 
+[git_branch]
+format = '[$symbol$branch (:$remote_branch)]($style)'
+symbol = ''
+
 [git_commit]
-format = '[\(🌿 $hash$tag\)]($style) '
-tag_symbol = ' 🔖 '
-only_detached = true
+format = '[\(🌿$hash$tag\)]($style) '
+tag_symbol = ' 🔖'
+only_detached = false
 tag_disabled = false
 style = 'bold yellow'
+commit_hash_length = 11
 
 [git_state]
 rebase = '🌳 REBASING'
@@ -45,14 +50,34 @@ time_format = '[ %H:%M:%S ]'
 utc_time_offset = 'local'
 
 [cmd_duration]
-disabled = true
+min_time = 1
+show_milliseconds = true
+
+[[battery.display]]
+threshold = 20
+style = 'bold red'
+
+[cmake]
+format = '[$symbol($version )]($style)'
+
+[golang]
+format = '[$symbol($version )]($style)'
+
+[lua]
+format = '[$symbol($version )]($style)'
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[rust]
+format = '[$symbol($version )]($style)'
+
+[zig]
+format = '[$symbol($version )]($style)'
 
 [gcloud]
 disabled = true
 
 [nodejs]
 disabled = true
-
-[[battery.display]]
-threshold = 20
-style = 'bold red'
+format = '[$symbol($version )]($style)'
