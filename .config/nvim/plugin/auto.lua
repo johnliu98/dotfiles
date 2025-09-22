@@ -26,3 +26,22 @@ vim.api.nvim_create_autocmd('TermOpen', {
     vim.cmd ':startinsert'
   end,
 })
+
+-- vim.api.nvim_create_autocmd({ 'BufEnter', 'BufNew', 'BufNewFile' }, {
+--   group = vim.api.nvim_create_augroup('buffer-open', { clear = true }),
+--   callback = function()
+--     require('no-neck-pain').enable {}
+--   end,
+-- })
+
+-- Create an autocommand group
+local wrap_for_text_files = vim.api.nvim_create_augroup('WrapForTextFiles', { clear = true })
+
+-- Set textwidth for text and markdown files
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'text', 'markdown' },
+  group = wrap_for_text_files,
+  callback = function()
+    vim.opt_local.textwidth = 80
+  end,
+})

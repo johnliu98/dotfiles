@@ -98,6 +98,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Enable Telescope extensions if they are installed
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
+    pcall(require('telescope').load_extension, 'gh')
 
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
@@ -113,8 +114,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
     vim.keymap.set('n', '<leader>so', builtin.oldfiles, { desc = '[S]earch [O]ld Files' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-
-    require('telescope').load_extension 'gh'
     vim.keymap.set('n', '<leader>sp', require('telescope').extensions.gh.pull_request, { desc = '[S]earch [P]ull Requests' })
 
     require('config.telescope.multigrep').setup()

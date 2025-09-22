@@ -1,10 +1,9 @@
 ; extends
 
-; function name
+; Go function name
 (function_declaration
   name: (_) @function.name)
 
-; method name
+; Go method name
 (method_declaration
-  name: (_) @function.name
-  body: (block)?)
+  name: (_) @function.name)
