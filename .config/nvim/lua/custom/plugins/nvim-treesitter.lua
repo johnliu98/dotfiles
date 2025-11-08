@@ -29,7 +29,7 @@ return {
       on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
     }
     require('nvim-treesitter.configs').setup {
-      ensure_installed = { 'bash', 'c', 'go', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'go', 'diff', 'html', 'css', 'tsx', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
       auto_install = true,
       highlight = { enable = true },
       indent = { enable = true },

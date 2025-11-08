@@ -3,13 +3,12 @@
 # --- General Aliases ----
 
 # movement
-alias ge="cd ~/go/src/github.com/einride-autonomous"
-alias gee="cd ~/go/src/github.com/einride"
-alias gea="cd ~/go/src/github.com/einride-autonomous/ads/services/ad"
-alias ges="cd ~/go/src/github.com/einride-autonomous/simian-adapter"
-alias ads="cd ~/go/src/github.com/einride-autonomous/ads"
-alias gep="cd ~/go/src/github.com/einride-autonomous/ads/services/pod-fusion-service"
-alias gev="cd ~/go/src/github.com/einride-autonomous/vehicle-control"
+alias ge="cd ~/einride"
+alias gea="cd ~/einride/ads/services/ad"
+alias ges="cd ~/einride/simian-adapter"
+alias ads="cd ~/einride/ads"
+alias gep="cd ~/einride/ads/services/pod-fusion-service"
+alias gev="cd ~/einride/vehicle-control"
 
 # listing
 alias ls='ls -hN --color=auto --group-directories-first'
@@ -37,7 +36,7 @@ alias v="nvim"
 alias vpn="sudo openvpn --config $VPN_CONFIG"
 
 # python
-alias p="python"
+alias p="python3"
 
 # --- Git Aliases ---
 alias ga="git add"

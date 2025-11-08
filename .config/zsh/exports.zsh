@@ -31,8 +31,9 @@ export BROWSER="google-chrome-stable"
 
 # Set Go variables
 export GOROOT="/usr/local/go"
-export GOPATH="$HOME/go"
-export GOBIN="$HOME/go/bin"
+export GOPATH="$XDG_DATA_HOME"/go
+export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
+export GOBIN="$HOME/.local/bin"
 export GOPRIVATE="github.com/einride/*,go.einride.tech/*,github.com/einride-autonomous/*"
 
 # Export to PATH
@@ -44,6 +45,7 @@ export PATH="$PATH:${XDG_DATA_HOME}/fnm"
 export PATH="$PATH:${GOPATH}/src/github.com/balena-io/balena-cli"
 export PATH="$PATH:${XDG_DATA_HOME}/npm/bin"
 export PATH="$PATH:${XDG_DATA_HOME}/python/bin"
+export PATH="$PATH:${XDG_DATA_HOME}/google-cloud-sdk/bin"
 
 # Ansible
 export ANSIBLE_HOME="$XDG_CONFIG_HOME/ansible"
@@ -120,4 +122,15 @@ ZINIT_HOME="${XDG_DATA_HOME}/zinit/zinit.git"
 export GPG_TTY=$(tty)
 
 # Add path to alcritty completions.
-fpath+=${ZDOTDIR:-~}
+fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+# fnm
+FNM_PATH="/home/john/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

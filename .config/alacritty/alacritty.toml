@@ -1,10 +1,5 @@
-import = [
-    "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
-]
 
-live_config_reload = true
-
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 args = ["-l"]
 
@@ -43,3 +38,12 @@ y = 0
 [font.glyph_offset]
 x = 0
 y = 0
+
+[general]
+
+live_config_reload = true
+import = [
+    "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
+]
+
+[terminal]
